@@ -1,6 +1,6 @@
 # @digitalbazaar/lru-memoize ChangeLog
 
-## 1.1.0 - TBD
+## 1.1.0 - 2020-11-24
 
 - Implement `delete` API.
 
