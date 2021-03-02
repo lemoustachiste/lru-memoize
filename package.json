@@ -18,7 +18,6 @@
     "lib"
   ],
   "dependencies": {
-    "eslint-plugin-jsdoc": "^30.7.8",
     "esm": "^3.2.25",
     "lru-cache": "^6.0.0"
   },
@@ -28,6 +27,7 @@
     "delay": "^4.4.0",
     "eslint": "^7.9.0",
     "eslint-config-digitalbazaar": "^2.0.0",
+    "eslint-plugin-jsdoc": "^30.7.8",
     "karma": "^6.1.1",
     "karma-babel-preprocessor": "^8.0.0",
     "karma-chai": "^0.1.0",
