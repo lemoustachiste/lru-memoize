@@ -15,9 +15,7 @@
     "lint": "eslint ."
   },
   "files": [
-    "lib/main.js",
-    "lib/index.js",
-    "lib/LruMemoize.js"
+    "lib"
   ],
   "dependencies": {
     "eslint-plugin-jsdoc": "^30.7.8",
