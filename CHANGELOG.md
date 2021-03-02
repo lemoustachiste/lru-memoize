@@ -1,6 +1,6 @@
 # @digitalbazaar/lru-memoize ChangeLog
 
-## 2.0.0 - TBD
+## 2.0.0 - 2021-03-02
 
 ### Changed
 - **BREAKING**: Rename `LruMemoize` class to `LruCache`.
