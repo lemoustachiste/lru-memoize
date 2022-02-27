@@ -1,6 +1,6 @@
 # @digitalbazaar/lru-memoize ChangeLog
 
-## 2.2.0 - 2022-02-xx
+## 2.2.0 - 2022-02-27
 
 ### Added
 - Allow cache `options` to be passed to `memoize`. Only cache options
