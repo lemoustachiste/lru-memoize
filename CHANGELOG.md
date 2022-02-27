@@ -1,5 +1,11 @@
 # @digitalbazaar/lru-memoize ChangeLog
 
+## 2.2.0 - 2022-02-xx
+
+### Added
+- Allow cache `options` to be passed to `memoize`. Only cache options
+  that are supported by the underlying LRU instance will be used.
+
 ## 2.1.0 - 2021-06-30
 
 ### Added

@@ -40,6 +40,47 @@ describe('API', () => {
       result2.should.eql(result);
       executedTestFn.should.be.false;
     });
+    it('adds an item to the cache w/custom `maxAge`', async () => {
+      const m = new LruCache();
+      let executedTestFn = false;
+      const testFn = async () => {
+        // simulate an async task
+        await delay(100);
+        executedTestFn = true;
+        return {success: true, timestamp: Date.now()};
+      };
+      const maxAge = 200;
+      const result = await m.memoize({
+        key: 'test1',
+        fn: testFn,
+        options: {maxAge}
+      });
+      should.exist(result);
+      result.success.should.be.true;
+      result.timestamp.should.be.a('number');
+      executedTestFn.should.be.true;
+
+      // the second request should use the cached promise and resolved result
+      executedTestFn = false;
+      const result2 = await m.memoize({
+        key: 'test1',
+        fn: testFn
+      });
+      should.exist(result2);
+      result2.should.eql(result);
+      executedTestFn.should.be.false;
+
+      // third test should not find the expired result
+      await delay(maxAge + 1);
+      executedTestFn = false;
+      const result3 = await m.memoize({
+        key: 'test1',
+        fn: testFn
+      });
+      should.exist(result3);
+      result3.should.not.eql(result);
+      executedTestFn.should.be.true;
+    });
   });
   describe('delete', () => {
     it('removes an item from the cache', async () => {
